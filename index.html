@@ -13,18 +13,38 @@
     </head>
     <body>
         <!-- ゲームのタイトル -->
-        <h1>反射神経ゲーム</h1>
+        <h1 id="gametitle">反射神経ゲーム</h1>
 
         <!-- スコアとハイスコアを表示するエリア -->
         <div id="score-area">
-            スコア： <span id="score">0</span> / ハイスコア： <span id="highscore">0</span>
+            
         </div>
+        <div>
+            <button type="button" id="record-clear">クリア</button>
+        </div>
+        <div id="timer-area"></div>
 
         <!-- 敵キャラが出てくるゲームエリア -->
         <div id="game-area"></div>
 
         <!-- ゲームスタートのボタン -->
-        <button id="start-btn">ゲームスタート</button>
+        <button id="start-btn_beginner" class="start-btn">ゲームスタート(初級)</button>
+        <button id="start-btn_intermediate" class="start-btn">ゲームスタート(中級)</button>
+        <button id="start-btn_advanced" class="start-btn">ゲームスタート(上級)</button>
+
+        <div id="overlay"></div>
+        <div id="dialog">
+            <div class="row">
+                <span>ハイスコア更新！<br>登録する名前を入力してください。</span>
+            </div>
+            <div class="row">
+                <input id="name" type="text">
+            </div>
+            <div class="row">
+                <button id="dialog-ok">OK</button>
+                <button id="dialog-cancel">キャンセル</button>
+            </div>
+        </div>
 
         <!-- 外部JavaScriptファイルを読み込む (ゲームの動きを決める) -->
         <script src="script.js"></script>
